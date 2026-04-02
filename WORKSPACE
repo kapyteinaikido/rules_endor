@@ -15,6 +15,15 @@ http_archive(
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 bazel_skylib_workspace()
 
+http_archive(
+    name = "rules_java",
+    url = "https://github.com/bazelbuild/rules_java/releases/download/5.2.0/rules_java-5.2.0.zip",
+    sha256 = "2f9ed0a85783f78d1f1a87c2f7c2fa07f0f7d68a73d10dff2d2f7a58b4c5f7d3",
+    strip_prefix = "rules_java-5.2.0",
+)
+load("@rules_java//java:repositories.bzl", "rules_java_dependencies")
+rules_java_dependencies()
+
 load("//endorctl:repositories.bzl", "rules_endorctl_toolchains")
 rules_endorctl_toolchains()
 
