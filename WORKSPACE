@@ -18,9 +18,10 @@ bazel_skylib_workspace()
 
 http_archive(
     name = "rules_java",
-    url = "https://github.com/bazelbuild/rules_java/releases/download/5.2.0/rules_java-5.2.0.zip",
-    sha256 = "2f9ed0a85783f78d1f1a87c2f7c2fa07f0f7d68a73d10dff2d2f7a58b4c5f7d3",
-    strip_prefix = "rules_java-5.2.0",
+    urls = [
+        "https://github.com/bazelbuild/rules_java/releases/download/9.4.0/rules_java-9.4.0.tar.gz",
+    ],
+    sha256 = "f1c2526c8011f5082c9080f617799d6fbbf9fbe18ab132d09f561be6d543ea49",
 )
 load("@rules_java//java:repositories.bzl", "rules_java_dependencies")
 rules_java_dependencies()
